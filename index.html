@@ -25,26 +25,42 @@
     <div class="appContainer m-0 p-0 container-fluid">
       <nav class="navBarHeaderStyle navbar navbar-expand">
         <div class="row container-fluid">
-          <a class="col text-white navbar-brand" href="#">SK11</a>
+          <div class="headerTitleContainer d-flex flex-row w-auto align-items-center justify-content-center">
+            <a class="headerTitleText col text-white navbar-brand" href="#">SK11</a>
+            <a
+              href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa"
+              target="_blank"
+              class="argProgramaContainer d-flex flex-row align-items-center justify-content-center text-decoration-none"
+            >
+              <div class="argProgramaLogo">><span id="argProgramaLogoUnders">_</span></div>
+              <div id="argProgramaTextId" class="ArgProgramaText">
+                Argentina <br />
+                Programa
+              </div>
+            </a>
+          </div>
           <ul class="col-5 gap-3 gap-md-2 col-md-3 navbar-nav d-flex justify-content-around">
             <li class="nav-item dropdown">
               <a class="text-white nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Más </a>
               <ul class="dropdown-menu">
                 <li><button type="button" class="btn dropdown-item disabled" data-bs-toggle="modal" data-bs-target="#modalCertificados">Certificados</button></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <!-- <li><a class="dropdown-item" href="#">otro</a></li> -->
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><button id="logInButton" class="dropdown-item">Log In (admin)</button></li>
               </ul>
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Contactame</button>
+              <button id="contactMeButton" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                Contactame
+              </button>
             </li>
           </ul>
         </div>
       </nav>
+
       <main class="mainContainer sectionStyle container-fluid d-flex flex-column align-items-center">
         <!-- SECTION PRESENTATION -->
-        <!-- <h3 class="elementStyle">introducción <span class="badge bg-secondary">New</span></h3> -->
+
         <section class="presentationStyle row d-flex flex-row justify-content-evenly">
           <img
             class="user-select-none presentationImage col-4 p-3 rounded-circle img-fluid"
@@ -65,10 +81,10 @@
         </section>
 
         <!-- SECTION KNOWLEDGE -->
-        <section class="knowledgeContainer w-100 sectionStyle container-fluid">
+        <!-- <section class="knowledgeContainer w-100 sectionStyle container-fluid">
           <div class="row gap-3">
             <div class="knowItemStyle col-sm-12 col-md-5">
-              <h3>¿Que hago?</h3>
+              <h3>Que es lo que hago</h3>
               <p>Como desarrollador independiente mi trabajo es optimizar, automatizar y en definitiva hacer el tuyo mas facil</p>
             </div>
             <div class="knowItemStyle col">
@@ -87,12 +103,56 @@
               </p>
             </div>
           </div>
+        </section> -->
+
+        <!-- SECTION EXPERIENCE -->
+        <section class="experienceContainer sectionStyle w-100 container-fluid bg-light">
+          <h1 class="sectionTitle">Experiencia</h1>
+          <p class="sectionDescription">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis suscipit magnam accusantium mollitia adipisci quisquam cumque? Esse, corrupti inventore. Necessitatibus, quis! Voluptatum
+            dolores eaque autem distinctio natus, sit vitae eligendi?
+          </p>
+          <div class="experienceItemsContainer d-flex flex-column gap-3 align-items-center">
+            <div class="experienceItem row">
+              <div class="expItemImage col-4">
+                <img src="https://astilleroparanasur.com/wp-content/uploads/2022/08/INTI.png" alt="logo-item" />
+              </div>
+              <div class="expItemInformation col-8">
+                <h4 class="expItemInfoTitle">Titulo cargo</h4>
+                <p class="expItemInfoDescription">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt non explicabo sint, quis ut sit nemo recusandae alias inventore eius, eum voluptate, necessitatibus quas accusantium
+                  esse facilis minus? Repellat, laboriosam?
+                </p>
+              </div>
+            </div>
+            <div class="experienceItem row">
+              <div class="expItemImage col-4">
+                <img src="https://astilleroparanasur.com/wp-content/uploads/2022/08/INTI.png" alt="logo-item" />
+              </div>
+              <div class="expItemInformation col-8">
+                <h4 class="expItemInfoTitle">Titulo cargo 2</h4>
+                <p class="expItemInfoDescription">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt non explicabo sint, quis ut sit nemo recusandae alias inventore eius, eum voluptate, necessitatibus quas accusantium
+                  esse facilis minus? Repellat, laboriosam?
+                </p>
+              </div>
+            </div>
+            <div class="experienceItem row">
+              <div class="expItemImage col-4">
+                <img src="https://astilleroparanasur.com/wp-content/uploads/2022/08/INTI.png" alt="logo-item" />
+              </div>
+              <div class="expItemInformation col-8">
+                <h4 class="expItemInfoTitle">Titulo cargo 3 </h4>
+                <p class="expItemInfoDescription">Lorem ipsum, dolor sit amet consectetur adipisicing elit. ?</p>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <img src="./media/bg-image.jpg" class="backgroundImage" alt="bg-img" />
     </div>
 
-    <!-- Modal Certificados -->
+    <!-- CERTIFICADOS MODAL -->
     <div class="modal fade" id="modalCertificados" tabindex="-1" aria-labelledby="modalCertificadosLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -109,82 +169,62 @@
       </div>
     </div>
 
-    <!-- Modal Contact -->
+    <!-- LOGIN FORM COMPONENT -->
+    <div id="formLoginModal">
+      <form id="formLogin" class="p-4 d-flex flex-column">
+        <div class="form-outline m-2">
+          <label class="form-label" for="formUserLogin">Usuario</label>
+          <input type="text" id="formUserLogin" class="form-control" />
+        </div>
 
+        <div class="form-outline m-2">
+          <label class="form-label" for="formPassLogin">Contraseña</label>
+          <input type="password" id="formPassLogin" class="form-control" />
+        </div>
+
+        <div class="m-4 text-center">
+          <a href="#!">Recuperar Contraseña</a>
+        </div>
+        <button type="button" id="formLoginBtn" class="btn btn-primary btn-block m-2">Iniciar Sesion</button>
+        <button type="button" id="formLoginBtnCancel" class="btn btn-secondary btn-block m-2">Cancelar</button>
+      </form>
+    </div>
+
+    <!-- CONTACT MODAL -->
     <div class="modalContactStyle offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Contacto:</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
+      <div id="offCanvasBody" class="offcanvas-body">
         <section class="mb-4">
-          <!--Section heading-->
           <h2 class="h1-responsive font-weight-bold text-center my-4">Escribime!</h2>
-          <!--Section description-->
-          <p class="text-center w-responsive mx-auto mb-5">¿Tenes alguna consulta que quieras hacerme? Podes contactarme a traves de mis redes sociales o por medio de un Mail:</p>
+          <p class="text-center w-responsive mx-auto mb-5">¿Tenes alguna consulta que quieras hacerme? podes contactarme a traves de:</p>
 
-          <div class="row">
+          <div class="row g-3">
             <div class="col">
-              <form id="contact-form" name="contact-form" action="mail.js" method="POST">
-                <div class="row p-2">
-                  <div class="col-12">
-                    <div class="md-form mb-0 pb-2">
-                      <label for="name" class="">Tu Nombre</label>
-                      <input type="text" id="name" name="name" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="md-form mb-0 pb-2">
-                      <label for="email" class="">Tu Email</label>
-                      <input type="text" id="email" name="email" class="form-control" />
-                    </div>
-                  </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Un Mail</h5>
+                  <p class="card-text">Podes escribirme un mail a mi correo <strong>maximiliano0505@gmail.com</strong></p>
+                  <a target="_blank" href="mailto:maximiliano0505@gmail.com" class="btn btn-primary">Enviar Mail</a>
                 </div>
-                <div class="row p-2">
-                  <div class="col-md-12">
-                    <div class="md-form mb-0">
-                      <label for="subject" class="">Motivo</label>
-                      <input type="text" id="subject" name="subject" class="form-control" />
-                    </div>
-                  </div>
-                </div>
-                <div class="row p-2">
-                  <div class="col-md-12">
-                    <div class="md-form">
-                      <label for="message">Tu mensaje</label>
-                      <textarea type="text" id="message" name="message" rows="3" class="form-control md-textarea"></textarea>
-                    </div>
-                  </div>
-                </div>
-              </form>
-
-              <div class="text-center text-md-left">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
               </div>
-              <div class="status"></div>
             </div>
-
-            <!-- <div class="col-md-3 text-center">
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <i class="fas fa-map-marker-alt fa-2x"></i>
-                  <p>San Francisco, CA 94126, USA</p>
-                </li>
-
-                <li>
-                  <i class="fas fa-phone mt-4 fa-2x"></i>
-                  <p>+ 01 234 567 89</p>
-                </li>
-
-                <li>
-                  <i class="fas fa-envelope mt-4 fa-2x"></i>
-                  <p>contact@mdbootstrap.com</p>
-                </li>
-              </ul>
-            </div> -->
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">WhatsApp</h5>
+                  <p class="card-text">Enviarme un Mensaje por medio de WhatsApp a mi numero celular <strong>(+54) 297-405-6545</strong></p>
+                  <a target="_blank" href="https://wa.me/2974056545" class="btn btn-primary">Enviar Mensaje</a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
     </div>
+
+    <script src="./src/index.js"></script>
   </body>
 </html>

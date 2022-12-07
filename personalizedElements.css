@@ -1,13 +1,101 @@
+.argProgramaLogo {
+  width: 75px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 1000;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+
+.argProgramaContainer {
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+  border: solid 2px transparent;
+}
+.argProgramaContainer:hover {
+  border: solid 2px white;
+}
+
+@keyframes undersAnimation {
+  0% {
+    color: yellow;
+  }
+  50% {
+    color: transparent;
+  }
+}
+
+#argProgramaLogoUnders {
+  color: yellow;
+  border-radius: 10px;
+  animation-name: undersAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.headerTitleText {
+  cursor: pointer;
+  border: solid 2px transparent;
+  transition: 0.1s ease-in-out;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 1000;
+}
+
+.headerTitleText:hover {
+  border: solid 2px white;
+}
+
+.ArgProgramaText {
+  color: white;
+  text-align: center;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 10px;
+}
+
+#formLoginModal {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#formLogin {
+  width: auto;
+  height: auto;
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+}
+
 .navBarHeaderStyle {
-    position:fixed;
-    width:100%;
-    height:70px;
+  position: fixed;
+  width: 100%;
+  height: 80px;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 .sectionStyle {
   padding-top: 25px;
+  padding:10px;
   box-sizing: border-box;
+}
+
+.sectionTitle {
+  padding: 10px 10px 10px 0px;
 }
 
 .presentationStyle {
@@ -34,8 +122,53 @@
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
+.experienceContainer {
+  /* border:solid 2px red; */
+}
 
-.modalContactStyle{
-    color:black;
-    background-color:rgba(255, 255, 255, 0.9);
+.experienceItemsContainer {
+  /* border: solid 2px black; */
+  /* display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px; */
+}
+.expItemImage{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+}
+
+.expItemImage img{
+  object-fit: cover;
+  max-width:150px;
+  
+}
+
+.experienceItem {
+  width:100%;
+  border-radius: 5px;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  margin:5px;
+}
+
+.modalContactStyle {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+@media (min-width: 750px) {
+  
+  .experienceItemsContainer{
+    padding:20px;
+    display:flex;
+    align-items: flex-start;
+    justify-content: start;
+  }
+
+  .experienceItem{
+    width:60%;
+  }
 }
